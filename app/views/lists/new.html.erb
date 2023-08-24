@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row justifiy-content-center">
+    <div class="col-12">
+      <h1>Create New List</h1>
+      <%= simple_form_for(@list) do |f| %>
+      <%= f.input :name %>
+      <%= f.input :poster_url %>
+      <%= f.submit %>
+      <% end %>
+      <%= link_to "Back to All Lists", lists_path %>
+    </div>
+  </div>
+</div>

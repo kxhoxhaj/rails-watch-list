@@ -1,0 +1,32 @@
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1><%= @list.name %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <% @bookmarks.each do |bookmark| %>
+        <div class="card" style="width: 18rem;">
+          <img src= <%= bookmark.movie.poster_url %> class="card-img-top" alt=<%= bookmark.movie.title %>>
+          <div class="card-body">
+            <h5 class="card-title"><%= bookmark.movie.title %></h5>
+            <p class="card-text"><%= bookmark.comment %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-12 col-lg-4">
+      <h3>Add new bookmark</h3>
+      <%= simple_form_for [@list, @bookmark] do |f| %>
+        <%= f.input :comment %>
+        <%= f.association :movie %>
+        <%= f.button :submit , class:"btn btn-primary"%>
+      <% end %>
+      <br>
+      <%= link_to "Back to All Lists", lists_path, class:"btn btn-secondary"%>
+    </div>
+  </div>
+</div>
