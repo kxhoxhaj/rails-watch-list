@@ -1,13 +1,12 @@
-<div class="container">
-  <div class="row justifiy-content-center">
-    <div class="col-12">
+<div class="container new-list mt-3" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.berlin.de/imgscaler/CDLgVJmJ1VyBzAP1bKuajTlS_HUQbzAlxaBQstx8jdU/rbig2zu1/L3N5czExLXByb2QvZm90b2xpYS9hbmRlcmUvZml0dG9zaXplX181NDBfMjcwX2ZlMjg4ODExZDA0ZTE4NTAzYTc5ZjdhNWQxZWU3MDEyX2ZvdG9saWFfMzgwNzA2MDZfc3Vic2NyaXB0aW9uX21vbnRobHlfeGwuanBn.jpg?ts=1684984885);">
+  <div class="row justify-content-center">
+    <div class="col-4 add-form mt-5">
       <h1>Create New List</h1>
       <%= simple_form_for(@list) do |f| %>
       <%= f.input :name %>
-      <%= f.input :poster_url %>
-      <%= f.submit %>
+      <%= f.submit class:"btn btn-primary w-100"%>
       <% end %>
-      <%= link_to "Back to All Lists", lists_path %>
+      <%= link_to "Back to All Lists", lists_path, class:"btn btn-secondary w-100 my-3"%>
     </div>
   </div>
 </div>
